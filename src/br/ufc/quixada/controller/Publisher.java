@@ -29,23 +29,17 @@ public class Publisher implements Runnable{
             connOpts.setUserName("savio_u_mqtt");
             connOpts.setPassword("mqtt_senha".toCharArray());
             connOpts.setCleanSession(true);
-            System.out.println("Connecting to broker: "+broker);
+            //System.out.println("Connecting to broker: "+broker);
             sampleClient.connect(connOpts);
-            System.out.println("Connected");
+            //System.out.println("Connected");
             System.out.println("Publishing message: "+this.msg);
             MqttMessage message = new MqttMessage(this.msg.getBytes());
             message.setQos(qos);
             sampleClient.publish(this.topic, message);
             System.out.println("Message published");
             sampleClient.disconnect();
-            System.out.println("Disconnected");
-            //System.exit(0);
+            //System.out.println("Disconnected");
         } catch(MqttException me) {
-            //System.out.println("reason "+me.getReasonCode());
-            //System.out.println("msg "+me.getMessage());
-            //System.out.println("loc "+me.getLocalizedMessage());
-            //System.out.println("cause "+me.getCause());
-            //System.out.println("excep "+me);
             me.printStackTrace();
         }
 	}
