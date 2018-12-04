@@ -9,7 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="mostrarMensagem">Hello World!</a>
+<a href="mostrarMensagem">Hello World!</a>listarFuncionarios
+<a href="listarFuncionarios">Listar Funcionarios!</a>
 <%
     String mensagem = "Bem vindo!";
 %>
